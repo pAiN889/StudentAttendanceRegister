@@ -1,6 +1,7 @@
 package com.example.studentattendanceregister;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -43,22 +44,27 @@ public class MainActivity extends AppCompatActivity {
 
         // Ensure status bar icons (clock, battery, signal) are dark for light background legibility
         WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-        controller.setAppearanceLightStatusBars(true);
+        if (controller != null) {
+            controller.setAppearanceLightStatusBars(true);
+        }
 
         setContentView(R.layout.activity_main);
 
         // Apply system bar insets + layout margin padding for clean edge spacing
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            int contentPadding = (int) (16 * getResources().getDisplayMetrics().density);
-            v.setPadding(
-                    systemBars.left + contentPadding,
-                    systemBars.top + contentPadding,
-                    systemBars.right + contentPadding,
-                    systemBars.bottom + contentPadding
-            );
-            return insets;
-        });
+        View mainRoot = findViewById(R.id.main);
+        if (mainRoot != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainRoot, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                int contentPadding = (int) (16 * getResources().getDisplayMetrics().density);
+                v.setPadding(
+                        systemBars.left + contentPadding,
+                        systemBars.top + contentPadding,
+                        systemBars.right + contentPadding,
+                        systemBars.bottom + contentPadding
+                );
+                return insets;
+            });
+        }
 
         // Initialize UI Views
         initViews();

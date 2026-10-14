@@ -75,6 +75,10 @@ public class StudentAdapter extends ArrayAdapter<Student> {
             holder = (ViewHolder) itemView.getTag();
         }
 
+        if (position < 0 || position >= students.size()) {
+            return itemView;
+        }
+
         Student student = students.get(position);
         holder.tvStudentName.setText(student.getName());
 
