@@ -43,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Ensure status bar icons (clock, battery, signal) are dark for light background legibility
         WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-        if (controller != null) {
-            controller.setAppearanceLightStatusBars(true);
-        }
+        controller.setAppearanceLightStatusBars(true);
 
         setContentView(R.layout.activity_main);
 
