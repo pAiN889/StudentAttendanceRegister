@@ -2,4 +2,24 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme Blue Colors -->
+    <color name="primary_blue">#1976D2</color>
+    <color name="primary_blue_dark">#1565C0</color>
+    <color name="primary_blue_light">#E3F2FD</color>
+    <color name="primary_blue_accent">#2196F3</color>
+
+    <!-- Attendance Status Colors -->
+    <color name="status_present">#2E7D32</color>
+    <color name="status_present_bg">#E8F5E9</color>
+    <color name="status_absent">#C62828</color>
+    <color name="status_absent_bg">#FFEBEE</color>
+
+    <!-- General UI Colors -->
+    <color name="background_light">#F5F7FA</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#666666</color>
+    <color name="divider_color">#E0E0E0</color>
+    <color name="input_border">#BDBDBD</color>
 </resources>
